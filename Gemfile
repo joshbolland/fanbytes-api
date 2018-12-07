@@ -8,6 +8,13 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.1'
 gem 'redis'
+gem "simple_token_authentication"
+
+gem "trailblazer"
+gem "trailblazer-cells"
+gem "cells-erb"
+gem "cells-hamlit"
+gem "cells-rails"
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
