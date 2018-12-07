@@ -1,8 +1,21 @@
-require_relative "../contract/create"
+class Campaign < ActiveRecord::Base
+class Create < Trailblazer::Operation
+  extend Contract::DSL
 
-class Campaign::Create < Trailblazer::Operation
+  contract do
+    property :title
+    property :start_date
+    property :budget
+    property :brief
+
+    validates :title, presence: true
+    validates :start_date, presence: true, in_future: true
+    validates :budget, presence: true
+    validates :brief, presence: true
+  end
+
   step Model(Campaign, :new)
-  step Contract::Build(constant: Campaign::Contract::Create)
+  step Contract::Build()
   step Contract::Validate(key: :campaign)
   step :persist!
   step :notify!

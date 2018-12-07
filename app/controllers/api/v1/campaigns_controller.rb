@@ -3,7 +3,7 @@ class Api::V1::CampaignsController < Api::V1::BaseController
   before_action :set_campaign, only: [:show, :update, :destroy]
 
   def index
-    @campaign = Campaign.all
+    @campaigns = Campaign.all
   end
 
   def show

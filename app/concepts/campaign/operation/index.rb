@@ -3,7 +3,7 @@ class Campaign < ActiveRecord::Base
     step :model!
 
     def model!(options, *)
-      options["model"] = ::Campaign.all.reverse_order
+      options["model"] = ::Campaign.all
     end
   end
 end
